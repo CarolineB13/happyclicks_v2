@@ -1,0 +1,106 @@
+@import "../variables";
+@import "../mixins";
+
+/* --- Barre de navigation --- */
+header {
+  background: #f5f6f7;              
+}
+
+
+.header-inner {
+  
+  display: flex;
+}
+
+/* Logo */
+.logo {
+  display: block;
+  height: 100px;    
+  width: auto;
+}
+
+/* Nav (desktop) */
+.nav {
+  display: flex;
+  align-items: center;
+
+}
+
+.nav a {
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 8px 4px;
+  border-radius: 8px;
+}
+
+.nav a:hover,
+.nav a:focus {
+  color: #000;
+  outline: none;
+}
+
+/* Bouton hamburger (caché en desktop) */
+.hamb {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  border: 1px solid #e3e5e9;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+.hamb-bar,
+.hamb-bar::before,
+.hamb-bar::after {
+  content: "";
+  display: block;
+  width: 20px;
+  height: 2px;
+  background: #0f1115;
+  border-radius: 2px;
+  position: relative;
+}
+
+.hamb-bar::before { top: -6px; position: relative; }
+.hamb-bar::after  { top:  4px; position: relative; }
+
+/* --------- Mobile --------- */
+@include responsive {
+  .logo { height: 56px; } /* réduit le logo en mobile */
+
+  .hamb { display: inline-flex; }   /* on montre le bouton */
+  .nav  {                           /* menu replié par défaut */
+    display: none;
+    position: absolute;
+    right: 22px;
+    top: 72px;                      /* sous la barre */
+    background: #ffffff;
+    color: #0f1115;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 10px;
+    min-width: 220px;
+    box-shadow: 0 10px 30px rgba(0,0,0,.12);
+    flex-direction: column;
+    gap: 2px;
+    z-index: 40;
+  }
+
+  .nav.open { display: flex; }      /* ouvert quand on toggle la classe */
+
+  .nav a {
+    color: #0f1115;
+    padding: 10px 12px;
+    border-radius: 8px;
+  }
+
+  .nav a:hover,
+  .nav a:focus {
+    background: #f2f3f5;
+    color: #000;
+  }
+}

@@ -1,0 +1,191 @@
+---
+import Base from "../layouts/Base.astro";
+import "../assets/scss/base.scss";
+import "../assets/scss/components/_cards.scss";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+/* import des images locales */
+import ohmyfoodImg from "../assets/images/portfolio/ohmyfood.png";
+import printitImg from "../assets/images/portfolio/printit.png";
+import kasaImg from "../assets/images/portfolio/kasa.png";
+import ninaImg from "../assets/images/portfolio/nina-carducci.png";
+import abbImg from "../assets/images/portfolio/appart-beaute.png";
+
+import { Image } from "astro:assets";
+---
+<Base title="Portfolio — Happyclicks">
+  <Header />
+
+  <div class="container">
+    <section class="hero">
+      <span class="eyebrow">Portfolio</span>
+      <h1>Quelques projets qui me tiennent à cœur</h1>
+      <p class="lead">
+        Une sélection de réalisations client et de projets de formation,
+        développés avec soin. Transparence, simplicité et sens du détail.
+      </p>
+    </section>
+
+    <!-- Projet client réel -->
+    <section class="section">
+      <h2>Projet client réel</h2>
+      <p class="sub">Mise en avant d’un site vitrine en production.</p>
+
+   <div class="feature">
+  <div class="shot" aria-hidden="true">
+    <Image
+    src={abbImg}
+    alt="Appart & Beauté Institut — capture"
+    width={1200}
+    height={675}
+    format="webp"
+    quality={70}
+    loading="lazy"
+  />
+  </div>
+  <div class="feat-body">
+    <h3>Appart & Beauté Institut — site vitrine</h3>
+    <p>Création d’un site vitrine élégant et léger pour un institut à Marseille (La Valentine) :
+      identité douce, navigation claire, expérience mobile soignée.</p>
+    <div class="meta">
+      <span class="chip">HTML</span><span class="chip">CSS</span>
+      <span class="chip">JavaScript</span><span class="chip">Responsive</span>
+    </div>
+    <div class="btns">
+      <a class="btn primary" href="https://www.appartbeauteinstitut.com/" target="_blank" rel="noopener">
+        Visiter le site
+      </a>
+    </div>
+  </div>
+</div>
+
+    </section>
+
+    <!-- Projets de formation -->
+    <section class="section">
+      <h2>Projets de formation</h2>
+      <p class="sub">
+        Réalisés chez OpenClassrooms — intégration, interactions, performance & SEO.
+      </p>
+
+      <div class="grid">
+        <!-- OhMyFood -->
+        <article class="card">
+  <div class="thumb">
+  <Image
+    src={ohmyfoodImg}
+    alt="Projet OhMyFood"
+    width={1200}
+    height={675}
+    format="webp"
+    quality={70}
+    loading="lazy"
+  />
+</div>
+  <div class="card-body">
+    <h3>OhMyFood</h3>
+    <p>Interface mobile-first avec animations CSS. Organisation des styles avec SASS et versionnement Git.</p>
+    <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">SASS</span><span class="tag">Git</span></div>
+    <div class="links">
+      <a class="link" href="https://ohmyfood.happyclicks.fr/" target="_blank" rel="noopener"
+         aria-label="Voir le projet OhMyFood (nouvelle fenêtre)">Voir le projet</a>
+      <a class="link" href="https://github.com/CarolineB13/ohmyfood" target="_blank" rel="noopener"
+         aria-label="Voir le code source OhMyFood (GitHub)">Code source</a>
+    </div>
+  </div>
+</article>
+
+
+        <!-- Print It -->
+<article class="card">
+  <div class="thumb">
+  <Image
+    src={printitImg}
+    alt="Projet OhMyFood"
+    width={1200}
+    height={675}
+    format="webp"
+    quality={70}
+    loading="lazy"
+  />
+</div>
+  <div class="card-body">
+    <h3>Print It</h3>
+    <p>Dynamisation d’un site statique avec carrousel interactif en JavaScript.</p>
+    <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span><span class="tag">Git</span></div>
+    <div class="links">
+      <a class="link" href="https://printit.happyclicks.fr/" target="_blank" rel="noopener"
+         aria-label="Voir le projet Print It (nouvelle fenêtre)">Voir le projet</a>
+      <a class="link" href="https://github.com/CarolineB13/Print-it" target="_blank" rel="noopener"
+         aria-label="Voir le code source Print It (GitHub)">Code source</a>
+    </div>
+  </div>
+</article>
+
+
+        <!-- Kasa -->
+        <article class="card">
+  <div class="thumb">
+  <Image
+    src={kasaImg}
+    alt="Projet OhMyFood"
+    width={1200}
+    height={675}
+    format="webp"
+    quality={70}
+    loading="lazy"
+  />
+</div>
+  <div class="card-body">
+    <h3>Kasa</h3>
+    <p>Application front de location immobilière avec React & React Router.</p>
+    <div class="tags"><span class="tag">React</span><span class="tag">React Router</span><span class="tag">JavaScript</span><span class="tag">SASS</span></div>
+    <div class="links">
+      <a class="link" href="https://kasa.happyclicks.fr/" target="_blank" rel="noopener"
+         aria-label="Voir le projet Kasa (nouvelle fenêtre)">Voir le projet</a>
+      <a class="link" href="https://github.com/CarolineB13/kasa" target="_blank" rel="noopener"
+         aria-label="Voir le code source Kasa (GitHub)">Code source</a>
+    </div>
+  </div>
+</article>
+
+
+        <!-- Nina Carducci -->
+        <article class="card">
+  <div class="thumb">
+  <Image
+    src={ninaImg}
+    alt="Projet OhMyFood"
+    width={1200}
+    height={675}
+    format="webp"
+    quality={70}
+    loading="lazy"
+  />
+</div>
+  <div class="card-body">
+    <h3>Nina Carducci – Photographe</h3>
+    <p>Optimisation SEO & accessibilité : balisage, structure et vitesse (Lighthouse, Wave).</p>
+    <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">SEO</span><span class="tag">Lighthouse</span></div>
+    <div class="links">
+      <a class="link" href="https://ninacarducci.happyclicks.fr/" target="_blank" rel="noopener"
+         aria-label="Voir le projet Nina Carducci (nouvelle fenêtre)">Voir le projet</a>
+      <a class="link" href="https://github.com/CarolineB13/Photographe_Nina_Carducci" target="_blank" rel="noopener"
+         aria-label="Voir le code source Nina Carducci (GitHub)">Code source</a>
+    </div>
+  </div>
+</article>
+
+      </div>
+    </section>
+
+    <section class="cta">
+      <h3>Un site vitrine à créer ou à refondre ?</h3>
+      <p>Je conçois des sites sur-mesure, légers et rapides. Parlons de votre projet ☕</p>
+      <a class="btn primary" href="/contact">Me contacter</a>
+    </section>
+  </div>
+
+  <Footer />
+</Base>

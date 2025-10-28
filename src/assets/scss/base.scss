@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap");
+@import "./variables";
+@import "./mixins";
+
+/* Reset léger */
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(255, 213, 77, .15), transparent 60%),
+    radial-gradient(1000px 500px at -10% 110%, rgba(45, 212, 191, .12), transparent 60%),
+    $bg;
+  color: $text;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  line-height: 1.55;
+  letter-spacing: .2px;
+}
+
+/* Utilitaires globaux */
+.container { @include container; }
+a { color: $brand; text-underline-offset: 2px; }
+
+/* Header / Nav */
+header {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 14px 0 8px;
+}
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: $text; }
+.dot { width: 14px; height: 14px; border-radius: 50%; background: $brand; box-shadow: 0 0 24px rgba(255,213,77,.65); }
+.brand span { font-weight: 700; @include h-title; letter-spacing: .3px; }
+nav a { color: $muted; text-decoration: none; margin-left: 18px; font-weight: 500; }
+nav a:hover { color: $text; }
+
+/* Titres / texte */
+h1 { @include h-title; font-size: 40px; line-height: 1.1; margin: 14px 0 10px; }
+h2 { @include h-title; font-size: 26px; margin: 0 0 14px; }
+.lead { max-width: 780px; color: #c8cdd8; font-size: 18px; }
+
+/* Sections */
+.hero { padding: 28px 0 8px; }
+.eyebrow { display: inline-flex; align-items: center; gap: 8px; @include pill; border: 1px solid #283042; color: $muted; }
+.section { margin-top: 42px; }
+.section .sub { color: $muted; margin-top: 4px; }
+
+/* Boutons */
+.btn {
+  appearance: none; border: none; padding: 12px 16px; border-radius: 12px; cursor: pointer;
+  font-weight: 600; letter-spacing: .2px; text-decoration: none; display: inline-flex; align-items: center; gap: 8px;
+}
+.btn.primary { background: $brand; color: #1d1d1d; }
+.btn.ghost { background: transparent; border: 1px solid #2a3040; color: $text; }
+.btn:hover { transform: translateY(-1px); }
+
+/* Feature (bloc grand projet) */
+.feature {
+  display: grid; grid-template-columns: 1.2fr 1fr; gap: 22px;
+  background: linear-gradient(180deg, rgba(255,213,77,.08), transparent 60%), $panel;
+  padding: 18px; border-radius: $radius; box-shadow: $shadow; border: 1px solid #242a37;
+}
+.shot { aspect-ratio: 16/9; background: #0b0d12; border-radius: 14px; overflow: hidden; display: grid; place-items: center; border: 1px solid #222838; }
+.shot img { width: 100%; height: 100%; object-fit: cover; display: block; filter: saturate(1.03); }
+.feat-body h3 { margin: 4px 0 10px; font-size: 22px; }
+.meta { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 12px; }
+.chip { background: #212634; color: #d7dbe6; border: 1px solid #2a3040; @include pill; }
+
+/* CTA */
+.cta {
+  margin-top: 48px;
+  background: linear-gradient(90deg, rgba(255,213,77,.15), rgba(45,212,191,.12));
+  padding: 22px; border-radius: $radius; border: 1px solid #2a3040;
+}
+.cta h3 { margin: 0 0 6px; @include h-title; }
+.cta p { margin: 0 0 12px; color: #d9dfea; }
+
+/* Layout responsive */
+@include responsive {
+  h1 { font-size: 32px; }
+  .feature { grid-template-columns: 1fr; }
+}
+.portrait{
+  border-radius:50%;
+  box-shadow:0 6px 20px rgba(0,0,0,.35);
+  margin: 0 0 16px;
+}

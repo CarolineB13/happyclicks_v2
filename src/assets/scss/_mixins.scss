@@ -1,0 +1,29 @@
+@mixin container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 28px 22px 80px;
+}
+
+@mixin card {
+  background: $panel;
+  border: 1px solid #242a37;
+  border-radius: $radius;
+  box-shadow: $shadow;
+  overflow: hidden;
+}
+
+@mixin pill {
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-size: 13px;
+}
+
+@mixin h-title {
+  font-family: Poppins, Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+@mixin responsive {
+  @media (max-width: $bp-md) {
+    @content;
+  }
+}

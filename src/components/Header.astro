@@ -1,0 +1,32 @@
+---
+import "../assets/scss/components/_header.scss";
+---
+
+<header>
+  <div class="header-inner">
+    <a  href="/" aria-label="Accueil Happyclicks">
+      <img src="/src/assets/images/logo.svg" alt="Happyclicks" class="logo" />
+    </a>
+
+    <!-- Navigation -->
+    <nav id="site-nav" class="nav">
+      <a href="/portfolio">Portfolio</a>
+      <a href="/services">Services</a>
+      <a href="/a-propos">À propos</a>
+      <a href="/contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- petit script pour toggler le menu mobile -->
+<script>
+  const btn = document.querySelector(".hamb");
+  const nav = document.getElementById("site-nav");
+  if (btn && nav) {
+    btn.addEventListener("click", () => {
+      const open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", String(!open));
+      nav.classList.toggle("open", !open);
+    });
+  }
+</script>

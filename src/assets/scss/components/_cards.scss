@@ -1,0 +1,30 @@
+@import "../variables";
+@import "../mixins";
+
+/* Grille & cartes pour le portfolio */
+.grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 18px; }
+.card { grid-column: span 6; @include card; }
+
+.thumb{aspect-ratio:16/9; background:#0b0d12; overflow:hidden; border-bottom:1px solid #242a37;}
+.thumb img,.shot img{display:block; width:100%; height:100%; object-fit:cover;}
+
+.card-body { padding: 16px; }
+.card h3 { margin: 0 0 8px; font-size: 20px; }
+.card p { color: #cbd2de; margin: 0 0 10px; }
+.tags { display: flex; flex-wrap: wrap; gap: 8px; margin: 10px 0 12px; }
+.tag { font-size: 12px; padding: 6px 10px; border-radius: 999px; background: #1e2330; border: 1px solid #2a3040; color: #d7dbe6; }
+.card .links { display: flex; justify-content: space-between; gap: 10px; margin-top: 8px; }
+.link { color: $brand; text-decoration: none; font-weight: 600; }
+.link:hover { text-decoration: underline; }
+
+@include responsive {
+  .card { grid-column: span 12; }
+}
+/* Sécurité anti-saut d’image (uniformité du ratio) */
+.thumb img,
+.shot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}

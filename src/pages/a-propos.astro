@@ -1,0 +1,66 @@
+---
+import Base from "../layouts/Base.astro";
+import "../assets/scss/base.scss";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+---
+<Base title="À propos — Happyclicks">
+  <Header />
+
+  <div class="container">
+    <section class="hero">
+      <span class="eyebrow">À propos</span>
+      <h1>Derrière Happyclicks, il y a Caroline.</h1>
+      <p class="lead">
+        Développeuse web front-end freelance — création de sites vitrines modernes,
+        accessibles et performants.
+      </p>
+    </section>
+    <section class="section">
+  <img
+    src="/src/assets/images/caro4.png"
+    alt="Caroline Briois — développeuse web"
+    width="260" height="260" loading="lazy" class="portrait"
+  />
+</section>
+
+
+    <section class="section">
+      <h2>Mon parcours</h2>
+      <p>
+        Après plus de 15 ans dans la comptabilité et l’administration,
+        j’ai choisi de suivre ma passion pour le numérique et de me reconvertir
+        dans le développement web. Aujourd’hui, je conçois des sites vitrines
+        sur mesure, esthétiques, rapides et simples à utiliser.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Mon approche</h2>
+      <p>
+        Je privilégie un code propre, une structure claire et une vraie écoute
+        des besoins. Chaque projet est une collaboration : comprendre votre
+        activité, la traduire en interface, et livrer un site durable.
+      </p>
+    </section>
+
+    <section class="section">
+      <h2>Techs</h2>
+      <p>
+        HTML, CSS/SCSS, JavaScript, React (au besoin), Astro pour le rendu
+        statique et le SEO, bonnes pratiques d’accessibilité.
+      </p>
+    </section>
+
+    <section class="cta">
+      <h3>Envie de créer ensemble ?</h3>
+      <p>
+        Je travaille entre le Var et l’Ardèche, et avec des clients partout
+        en France.
+      </p>
+      <a class="btn primary" href="/contact">Contactez-moi</a>
+    </section>
+  </div>
+
+  <Footer />
+</Base>
