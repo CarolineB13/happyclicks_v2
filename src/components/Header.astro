@@ -5,13 +5,14 @@ import "../assets/scss/components/_header.scss";
 
 <header>
   <div class="header-inner">
-    <a  href="/" aria-label="Accueil Happyclicks">
+    <!-- ✅ lien d'accueil compatible GitHub Pages -->
+    <a href={import.meta.env.BASE_URL} aria-label="Accueil Happyclicks">
       <img src={logoUrl} alt="Happyclicks" class="logo" />
     </a>
 
     <!-- Navigation -->
     <nav id="site-nav" class="nav">
-      <a href={`${import.meta.env.BASE_URL}/portfolio/`}>Portfolio</a>
+      <a href={`${import.meta.env.BASE_URL}portfolio/`}>Portfolio</a>
       <a href={`${import.meta.env.BASE_URL}services/`}>Services</a>
       <a href={`${import.meta.env.BASE_URL}a-propos/`}>À propos</a>
       <a href={`${import.meta.env.BASE_URL}contact/`}>Contact</a>
@@ -19,7 +20,7 @@ import "../assets/scss/components/_header.scss";
   </div>
 </header>
 
-<!-- petit script pour toggler le menu mobile -->
+<!-- Script pour le menu mobile -->
 <script>
   const btn = document.querySelector(".hamb");
   const nav = document.getElementById("site-nav");
