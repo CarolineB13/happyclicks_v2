@@ -3,6 +3,7 @@ import Base from "../layouts/Base.astro";
 import "../assets/scss/base.scss";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import CaroImg from "../assets/images/caro4.png"
 ---
 <Base title="À propos — Happyclicks">
   <Header />
@@ -18,7 +19,7 @@ import Footer from "../components/Footer.astro";
     </section>
     <section class="section">
   <img
-    src="/src/assets/images/caro4.png"
+    src={CaroImg}
     alt="Caroline Briois — développeuse web"
     width="260" height="260" loading="lazy" class="portrait"
   />
